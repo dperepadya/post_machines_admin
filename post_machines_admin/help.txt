@@ -2,13 +2,20 @@ Create an app:
     python manage.py startapp appname
 
 Register apps in settings.py
-INSTALLED_APPS = [
-    'user.apps.UserConfig',
-    ...
+    INSTALLED_APPS = [
+        'user.apps.UserConfig',
+        ...
 
 Register urls:
-urlpatterns = [
-    path('', parcel.views.parcel_list_view),
+    urlpatterns = [
+        path('', parcel.views.parcel_list_view),
 
 Run:
-python manage.py runserver
+    python manage.py runserver
+
+Create migrations:
+    python manage.py makemigrations
+
+
+Migration:
+    python manage.py migrate
