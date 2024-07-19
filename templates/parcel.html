@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <h1>{% if post_machine %}
+        Parcel. Post Machine: {{ post_machine.id }}
+    {% elif user %}
+        Parcel. User: {{ user.username }}
+    {% endif %}
+    </h1>
+    <p>ID: {{ parcel.id }}</p>
+    <p>Sender: {{ parcel.sender }}</p>
+    <p>Recipient: {{ parcel.recipient }}</p>
+    <p>Size: {{ parcel.size }}</p>
+    <p>Locker: {{ parcel.post_machine_locker.id }}</p>
+    <p>Send Date and Time: {{ parcel.send_date_time|date:"Y-m-d H:i:s" }}</p>
+    <p>Status: 
+        {% if parcel.status %}
+            Delivered
+        {% else %}
+            Picked Up
+        {% endif %}
+    </p>
+    <p>Pick up Date and Time: 
+        {% if parcel.open_date_time %}
+            {{ parcel.open_date_time|date:"Y-m-d H:i:s" }}
+        {% else %}
+            Not yet picked up
+        {% endif %}
+    </p>
+    {% if parcel.status %}
+        <form action="/user/parcels/{{ parcel.id }}/pick_up/" method="post">
+            {% csrf_token %}
+            <button type="submit">Pick up</button>
+        </form><br>
+    {% endif %}
+    <a href="{% if post_machine %}
+                /post_machine/{{ post_machine.id}}/parcels/
+            {% elif user %}
+                /user/parcels/
+            {% endif %}">
+            <button>Back to
+                {% if post_machine %}
+                    Post machine {{ post_machine.address }} {{ post_machine.city }}
+                {% elif user %}
+                    User {{ user.username }}
+                {% endif %}
+                Parcels
+            </button></a>
+    {% if user and user.is_superuser and parcel.status %}
+        <a href="/user/parcels/{{ parcel.id }}/edit/"><button>Edit the Parcel</button></a>
+    {% endif %}
+    <a href="/"><button>Home</button></a>
+</body>
+</html>

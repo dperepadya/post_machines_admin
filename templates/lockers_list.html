@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    {% if not lockers %}
+        <p>No lockers found.</p>
+    {% else %}
+        <h1>Lockers List for Post Machine {{ post_machine.id }}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Size</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for locker in lockers %}
+                    <tr>
+                        <td><a href="/post_machine/{{ post_machine.id }}/lockers/{{ locker.id }}">{{ locker.id }}</a><td>
+                        <td>{{ locker.size }}</td>
+                        <td>{% if locker.status %}
+                                Loaded
+                            {% else %}
+                                Empty
+                            {% endif %}</td>
+                    <tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <a href="/post_machine/{{ post_machine.id }}/"><button>Back to Post Machine</button></a>
+    <a href="/"><button>Home</button></a>
+</body>
+</html>

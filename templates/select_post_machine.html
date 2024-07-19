@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Post Machine</title>
+</head>
+<body>
+    <h1>Select Post Machine</h1>
+    <form action="/user/parcels/select_post_machine/" method="post">
+        {% csrf_token %}
+        <label for="sender">Sender:</label>
+        <input type="text" id="sender" name="sender" value="{{ sender }}" required>
+        <br>
+        <label for="size">Size:</label>
+        <input type="number" id="size" name="size" value="{{ size }}" required>
+        <br>
+        <label for="send_date_time">Send Date and Time:</label>
+        <input type="datetime-local" id="send_date_time" name="send_date_time" value="{{ send_date_time }}" required>
+        <br>
+        <label for="recipient_id">Recipient ID:</label>
+        <input type="number" id="recipient_id" name="recipient_id" value="{{ recipient_id }}" required>
+        <br>
+        <label for="post_machine">Select Post Machine:</label>
+        <select id="post_machine" name="post_machine" required>
+            {% for post_machine in post_machines %}
+                <option value="{{ post_machine.id }}">{{ post_machine.address }}, {{ post_machine.city }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Next</button>
+    </form>
+    <a href="/"><button>Home</button></a>
+</body>
+</html>

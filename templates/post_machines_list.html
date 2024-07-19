@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    {% if not post_machines %}
+        <p>No Post Machines found.</p>
+    {% else %}
+        <h1>Post Machines List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Address</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post_machine in post_machines %}
+                    <tr>
+                        <td><a href="/post_machine/{{ post_machine.id }}/">{{ post_machine.id }}</a><td>
+                        <td>{{ post_machine.address }}</td>
+                        <td>{{ post_machine.city }}</td>
+                    <tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <a href="/"><button>Home</button></a>
+</body>
+</html>

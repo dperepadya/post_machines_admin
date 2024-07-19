@@ -19,9 +19,14 @@ from django.urls import path, include
 
 import parcel
 import user.views
+from . import views
 
 urlpatterns = [
+    path('', views.landing_page, name='landing_page'),
     path('admin/', admin.site.urls),
+    path('login/', user.views.login_page, name='login'),
+    path('logout/', user.views.logout_page, name='logout'),
+    path('register/', user.views.register_page, name='register'),
     path('user/', include('user.urls')),
     path('parcel/', include('parcel.urls')),
     path('post_machine/', include('post_machine.urls')),

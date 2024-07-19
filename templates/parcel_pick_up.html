@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if parcel.locker is not None and not parcel.Status %}
+        <form action="/user/parcels/pick_up" method="post" >
+            <input type="hidden" name="parcel_id" id="parcel_id" value{{ parcel.pk }}>
+            <input type="submit" value="Get parcel">
+        </form>
+    {% endif %}
+</body>
+</html>

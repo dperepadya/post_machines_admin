@@ -11,8 +11,8 @@ class Parcel(models.Model):
     sender = models.CharField(max_length=100)
     size = models.PositiveSmallIntegerField()
     # post_machine_recipient = models.ForeignKey(PostMachine, on_delete=models.CASCADE, default=None)
-    post_machine_locker = models.ForeignKey(Locker, on_delete=models.CASCADE, default=None, related_name='lockers')
+    post_machine_locker = models.ForeignKey(Locker, on_delete=models.CASCADE, null=True, default=None, related_name='lockers')
     send_date_time = models.DateTimeField()
-    open_date_time = models.DateTimeField(null=True)
+    open_date_time = models.DateTimeField(null=True, default=None)
     status = models.BooleanField(default=False)
 

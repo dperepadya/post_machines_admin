@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <h1>Locker</h1>
+    <p>ID: {{ locker.id }}</p>
+    <p>Size: {{ locker.size }}</p>
+    <p>Status: 
+        {% if locker.status %}
+            Loaded
+        {% else %}
+            Empty
+        {% endif %}
+    </p>
+    <a href="/post_machine/{{ post_machine.id }}/lockers/"><button>Back to Post Machine Lockers</button></a>
+</body>
+</html>

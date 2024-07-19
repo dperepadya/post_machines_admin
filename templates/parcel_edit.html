@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Parcel</title>
+</head>
+<body>
+    <h1>Edit Parcel</h1>
+    <form action="/user/parcels/{{ parcel.id }}/edit/" method="post">
+        {% csrf_token %}
+        <label for="send_date_time">Send Date and Time:</label>
+        <input type="datetime-local" id="send_date_time" name="send_date_time" value="{{ parcel.send_date_time|date:"Y-m-d H:i:s" }}" required>
+        <br>
+        <label for="locker">Select Locker:</label>
+        <select id="locker" name="locker" required>
+            {% for locker in lockers %}
+                <option value="{{ locker.id }}" {% if locker.id == parcel.post_machine_locker.id %}selected{% endif %}>{{ locker.id }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Save</button>
+    </form>
+    <a href="/"><button>Home</button></a>
+</body>
+</html>

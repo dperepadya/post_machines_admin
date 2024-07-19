@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    {% if not parcels %}
+        <p>No parcels found.</p>
+    {% else %}
+        <h1>{% if post_machine %}
+            Parcels List for Post Machine: {{ post_machine.id }}
+        {% elif user %}
+            Parcels List for User: {{ user.username }}
+        {% endif %}
+        </h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Sender</th>
+                    <th>Recipient</th>
+                    <th>Size</th>
+                    <th>Locker</th>
+                    <th>Load Datetime</th>
+                    <th>Status</th>
+                    <th>Open Datetime</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for parcel in parcels %}
+                    <tr>
+                        <td>
+                            <a href="{% if post_machine %}
+                                /post_machine/{{ post_machine.id }}/parcels/{{ parcel.id }}/
+                            {% elif user %}
+                                /user/parcels/{{ parcel.id }}/
+                            {% endif %}">{{ parcel.id }}
+                            </a>
+                        <td>
+                        <td>{{ parcel.sender }}</td>
+                        <td>{{ parcel.recipient }}</td>
+                        <td>{{ parcel.size }}</td>
+                        <td>{{ parcel.post_machine_locker.id }}</td>
+                        <td>{{ parcel.send_date_time|date:"Y-m-d H:i:s" }}</td>
+                        <td>{% if parcel.status %}
+                                Delivered
+                            {% else %}
+                                Picked Up
+                            {% endif %}</td>
+                    
+                        <td>{% if parcel.open_date_time %}
+                                {{ parcel.open_date_time|date:"Y-m-d H:i:s" }}
+                                {% else %}
+                                Not yet picked up
+                                {% endif %}
+                        </td>
+                    <tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <a href="{% if post_machine %}
+                /post_machine/{{ post_machine.id}}/
+            {% elif user %}
+                /user/
+            {% endif %}">
+            <button>Back to
+            {% if post_machine %}
+                Post machine {{ post_machine.address }} {{ post_machine.city }}
+            {% elif user %}
+                User {{ user.username }}
+            {% endif %}
+            </button></a>
+    {% endif %}
+    {% if user and user.is_superuser %}
+        <a href="/user/parcels/create/"><button>Create a Parcel</button></a>
+    {% endif %}
+    <a href="/"><button>Home</button></a>
+</body>
+</html>

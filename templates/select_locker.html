@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Locker</title>
+</head>
+<body>
+    <h1>Select Locker in Post Machine {{ post_machine_id }}</h1>
+    <form action="/user/parcels/select_locker/" method="post">
+        {% csrf_token %}
+    <input type="hidden" name="sender" value="{{ sender }}">
+        <label for="sender">Sender:</label>
+        <input type="text" id="sender" name="sender" value="{{ sender }}" required>
+        <br>
+        <label for="size">Size:</label>
+        <input type="number" id="size" name="size" value="{{ size }}" required>
+        <br>
+        <label for="send_date_time">Send Date and Time:</label>
+        <input type="datetime-local" id="send_date_time" name="send_date_time" value="{{ send_date_time }}" required>
+        <br>
+        <label for="recipient_id">Recipient ID:</label>
+        <input type="number" id="recipient_id" name="recipient_id" value="{{ recipient_id }}" required>
+        <br>
+        <label for="locker">Select Locker:</label>
+        <select id="locker" name="locker" required>
+            {% for locker in lockers %}
+                <option value="{{ locker.id }}">Locker {{ locker.id }}, Size: {{ locker.size }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Assign Locker</button>
+    </form>
+</body>
+</html>
