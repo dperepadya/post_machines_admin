@@ -6,10 +6,11 @@
 </head>
 <body>
     {% if parcel.locker is not None and not parcel.Status %}
-        <form action="/user/parcels/pick_up" method="post" >
-            <input type="hidden" name="parcel_id" id="parcel_id" value{{ parcel.pk }}>
+        <form action="/user/parcels/{{ parcel.pk }}/pick_up" method="post" >
+            <input type="hidden" name="parcel_id" id="parcel_id" value{{ parcel.pk }}><br>
             <input type="submit" value="Get parcel">
         </form>
-    {% endif %}
+    {% endif %}<br>
+    <a href="/"><button>Home</button></a>
 </body>
 </html>

@@ -8,7 +8,6 @@
     <h1>Select Locker in Post Machine {{ post_machine_id }}</h1>
     <form action="/user/parcels/select_locker/" method="post">
         {% csrf_token %}
-    <input type="hidden" name="sender" value="{{ sender }}">
         <label for="sender">Sender:</label>
         <input type="text" id="sender" name="sender" value="{{ sender }}" required>
         <br>

@@ -48,7 +48,7 @@
                     User {{ user.username }}
                 {% endif %}
                 Parcels
-            </button></a>
+            </button></a><br>
     {% if user and user.is_superuser and parcel.status %}
         <a href="/user/parcels/{{ parcel.id }}/edit/"><button>Edit the Parcel</button></a>
     {% endif %}

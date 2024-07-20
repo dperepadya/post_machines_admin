@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
+from django.db import IntegrityError
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
@@ -7,6 +8,7 @@ from django.utils import timezone
 
 from parcel.models import Parcel
 from post_machine.models import PostMachine, Locker
+from user.forms import LoginForm, RegisterForm
 from utils import is_superuser
 import datetime
 
@@ -14,16 +16,17 @@ import datetime
 def login_page(request):
     context = {}
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is None:
-            context = {'error': "Username or password is incorrect"}
-        else:
-            login(request, user)
-            return redirect('/user/')
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('/user/')
+        context = {'error': "Username or password is incorrect"}
+    context['form'] = LoginForm()
     return render(request, 'login.html', context=context)
-    # return HttpResponse("Hello World. You are at the User Login view")
 
 
 @login_required
@@ -34,21 +37,28 @@ def logout_page(request):
 
 def register_page(request):
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        email = request.POST['email']
-        user = User.objects.create_user(username, email, password)
-        user.save()
-        return redirect('/login/')
-    return render(request, 'register.html')
-    # return HttpResponse("Hello World. You are at the User Register view")
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            try:
+                user = User.objects.create_user(username, email, password)
+                user.save()
+                return redirect('/login/')
+            except IntegrityError:
+                form.add_error('username', 'Username is already taken.')
+        context = {'form': form}
+        return render(request, 'register.html', context)
+    else:
+        context = {'form': RegisterForm()}
+        return render(request, 'register.html', context)
 
 
 @login_required(login_url='/login/')
 def user_page(request):
     context = {'user': request.user}
     return render(request, 'user.html', context)
-    # return HttpResponse("Hello World. You are at the User view")
 
 
 @login_required(login_url='/login/')
