@@ -14,27 +14,36 @@
     <p>Sender: {{ parcel.sender }}</p>
     <p>Recipient: {{ parcel.recipient }}</p>
     <p>Size: {{ parcel.size }}</p>
-    <p>Locker: {{ parcel.post_machine_locker.id }}</p>
+    <p>PostMachine: {{ parcel.post_machine_recipient.id }}</p>
+    <p>Locker:
+        {% if parcel.post_machine_locker is not None %}
+            {{ parcel.post_machine_locker.id }}
+        {% else %}
+            On the way
+        {% endif %}
+    </p>
     <p>Send Date and Time: {{ parcel.send_date_time|date:"Y-m-d H:i:s" }}</p>
-    <p>Status: 
+    <p>Status:
         {% if parcel.status %}
-            Delivered
+        Delivered {{ parcel.open_date_time|date:"Y-m-d H:i:s" }} 
         {% else %}
-            Picked Up
+        {% if parcel.locker is None %}
+        On the way
+        {% else %}
+        Waiting
+        {% endif %}
         {% endif %}
     </p>
-    <p>Pick up Date and Time: 
-        {% if parcel.open_date_time %}
-            {{ parcel.open_date_time|date:"Y-m-d H:i:s" }}
-        {% else %}
-            Not yet picked up
+    {% if parcel.status == False and user %}
+        {% if user.is_superuser and parcel.post_machine_locker is None %}
+            <a href="/user/parcels/{{ parcel.id }}/select_locker/"><button>Select Locker</button></a>
         {% endif %}
-    </p>
-    {% if parcel.status %}
-        <form action="/user/parcels/{{ parcel.id }}/pick_up/" method="post">
-            {% csrf_token %}
-            <button type="submit">Pick up</button>
-        </form><br>
+        {% if parcel.post_machine_locker is not None %}
+            <form action="/user/parcels/{{ parcel.id }}/get_parcel/" method="post">
+                {% csrf_token %}
+                <button type="submit">Get parcel</button>
+            </form><br>
+        {% endif %}
     {% endif %}
     <a href="{% if post_machine %}
                 /post_machine/{{ post_machine.id}}/parcels/
@@ -49,9 +58,6 @@
                 {% endif %}
                 Parcels
             </button></a><br>
-    {% if user and user.is_superuser and parcel.status %}
-        <a href="/user/parcels/{{ parcel.id }}/edit/"><button>Edit the Parcel</button></a>
-    {% endif %}
     <a href="/"><button>Home</button></a>
 </body>
 </html>

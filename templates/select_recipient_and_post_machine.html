@@ -9,20 +9,20 @@
     <form action="/user/parcels/select_recipient/" method="post">
         {% csrf_token %}
         <label for="sender">Sender:</label>
-        <input type="text" id="sender" name="sender" value="{{ sender }}" required>
+        <input type="text" id="sender" name="sender" value="{{ sender }}" readonly>
         <br>
         <label for="size">Size:</label>
-        <input type="number" id="size" name="size" value="{{ size }}" required>
+        <input type="number" id="size" name="size" value="{{ size }}" readonly>
         <br>
         <label for="send_date_time">Send Date and Time:</label>
-        <input type="datetime-local" id="send_date_time" name="send_date_time" value="{{ send_date_time }}" required>
+        <input type="datetime-local" id="send_date_time" name="send_date_time" value="{{ send_date_time }}" readonly>
         <br>
         <label for="recipient">Select Recipient:</label>
         <select id="recipient" name="recipient" required>
             {% for user in users %}
                 <option value="{{ user.id }}">{{ user.username }}</option>
             {% endfor %}
-        </select>
+        </select><br>
         <label for="post_machine">Select Post Machine:</label>
         <select id="post_machine" name="post_machine" required>
             {% for post_machine in post_machines %}
@@ -30,7 +30,7 @@
             {% endfor %}
         </select>
         <br>
-        <button type="submit">Next</button>
+        <button type="submit">Create Parcel</button>
     </form>
     <a href="/"><button>Home</button></a>
 </body>

@@ -20,10 +20,11 @@
                     <th>Sender</th>
                     <th>Recipient</th>
                     <th>Size</th>
+                    <th>PostMachine</th>
                     <th>Locker</th>
-                    <th>Load Datetime</th>
+                    <th>Send Datetime</th>
                     <th>Status</th>
-                    <th>Open Datetime</th>
+                    <th>Delivery Datetime</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,19 +41,24 @@
                         <td>{{ parcel.sender }}</td>
                         <td>{{ parcel.recipient }}</td>
                         <td>{{ parcel.size }}</td>
+                        <td>{{ parcel.post_machine_recipient.id }}</td>
                         <td>{{ parcel.post_machine_locker.id }}</td>
                         <td>{{ parcel.send_date_time|date:"Y-m-d H:i:s" }}</td>
                         <td>{% if parcel.status %}
                                 Delivered
                             {% else %}
-                                Picked Up
-                            {% endif %}</td>
-                    
-                        <td>{% if parcel.open_date_time %}
-                                {{ parcel.open_date_time|date:"Y-m-d H:i:s" }}
+                                {% if parcel.post_machine_locker is None %}
+                                    On the way
                                 {% else %}
-                                Not yet picked up
+                                    Waiting
                                 {% endif %}
+                            {% endif %}  
+                        </td>
+                        <td>{% if parcel.open_date_time %}
+                            {{ parcel.open_date_time|date:"Y-m-d H:i:s" }}
+                            {% else %}
+                                "-"
+                            {% endif %}
                         </td>
                     <tr>
                 {% endfor %}

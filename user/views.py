@@ -88,33 +88,34 @@ def user_parcel_view(request, parcel_id):
 
 
 @user_passes_test(is_superuser, login_url='/login/')
-def user_parcel_edit(request, parcel_id):
+def user_parcel_update(request, parcel_id):
     parcel = Parcel.objects.get(pk=parcel_id)
     print('parcel', parcel)
     context = {}
     if parcel is None:
         context['error'] = f"Cannot find a parcel with id {parcel_id}."
-    if not parcel.status:
+    if parcel.status:  # Delivered
         return redirect(f'/user/parcels/{parcel_id}')
-
     old_locker = parcel.post_machine_locker
 
     if request.method == 'POST':
-        send_date_time = request.POST['send_date_time']
+        # send_date_time = request.POST['send_date_time']
         new_locker_id = request.POST['locker']
         new_locker = Locker.objects.get(pk=new_locker_id)
-        print('changes:',send_date_time, new_locker_id)
-
-        parcel.send_date_time = send_date_time
+        print('changes:', new_locker_id)
+        # parcel.send_date_time = send_date_time
         parcel.post_machine_locker = new_locker
         parcel.save()
         print('Saved parcel', parcel)
 
-        if old_locker.id != new_locker_id:
-            old_locker.status = False
-            old_locker.save()
-            new_locker.status = True # Loaded
+        if new_locker is not None:
+            new_locker.status = True  # Loaded
             new_locker.save()
+        # in case of move the parcel to a new locker, change the status
+        if old_locker is not None and old_locker.id != new_locker_id:
+            old_locker.status = False  # Empty
+            old_locker.save()
+
         return redirect('/user/parcels/')
 
     post_machine = old_locker.post_machine
@@ -151,39 +152,19 @@ def user_parcel_create(request):
 
 @user_passes_test(is_superuser, login_url='/login/')
 def select_recipient_and_post_machine(request):
-    print("Select_recipient view called")
+    # print("Select_recipient view called")
     if request.method == 'POST':
-        print("POST request received")
+        # print("POST request received")
         sender = request.POST['sender']
         size = request.POST['size']
         send_date_time = request.POST['send_date_time']
         recipient_id = request.POST['recipient']
         post_machine_id = request.POST['post_machine']
         print('New parcel 2:', post_machine_id, recipient_id, sender, size, send_date_time)
-        lockers = Locker.objects.filter(post_machine_id=post_machine_id, status=False)  # Only show available lockers
-        context = {
-            'lockers': lockers,
-            'sender': sender,
-            'size': size,
-            'send_date_time': send_date_time,
-            'recipient_id': recipient_id,
-            'post_machine_id': post_machine_id,
-        }
-        return render(request, 'select_locker.html', context)
-    return render(request, 'select_recipient_and_post_machine.html')
-
-
-@user_passes_test(is_superuser, login_url='/login/')
-def select_locker(request):
-    if request.method == 'POST':
-        sender = request.POST['sender']
-        size = request.POST['size']
-        send_date_time = request.POST['send_date_time']
-        recipient_id = request.POST['recipient_id']
-        locker_id = request.POST['locker']
-        print('New parcel 3:', locker_id, recipient_id, sender, size, send_date_time)
         recipient = User.objects.get(pk=recipient_id)
-        locker = Locker.objects.get(pk=locker_id)
+        post_machine = PostMachine.objects.get(pk=post_machine_id)
+        if recipient is None or post_machine is None:
+            return redirect('/user/parcels/create/')
         print('date time:', send_date_time)
         parcel = Parcel.objects.create(
             sender=sender,
@@ -191,20 +172,58 @@ def select_locker(request):
             send_date_time=send_date_time,
             status=True,
             recipient=recipient,
-            post_machine_locker=locker,
+            post_machine=post_machine,
+            post_machine_locker=None,
             open_date_time=None
         )
         print('Save new Parcel')
         parcel.save()
+        return redirect(f'/user/parcels/')
+    return render(request, 'select_recipient_and_post_machine.html')
+
+
+@user_passes_test(is_superuser, login_url='/login/')
+def select_locker(request, parcel_id):
+    user = request.user
+    if user.is_superuser:
+        parcel = Parcel.objects.get(pk=parcel_id)
+    else:
+        parcel = Parcel.objects.get(recipient=user, pk=parcel_id)
+    if parcel is None:
+        return HttpResponse(f"Cannot find a parcel {parcel_id} for user {user.username}.", status=404)
+    if request.method == 'POST':
+        locker_id = request.POST['locker']
+        locker = Locker.objects.get(pk=locker_id)
+        if locker is None:
+            return redirect(f'/user/parcels/{parcel_id}/select_locker/')
         locker.status = True
         locker.save()
+        parcel.post_machine_locker = locker
+        parcel.save()
         print(f'Locker {locker_id} was Loaded')
         return redirect(f'/user/parcels/')
-    return render(request, 'select_locker.html')
+    recipient = parcel.recipient
+    post_machine = parcel.post_machine_recipient
+    if recipient is None or post_machine is None:
+        return redirect(f'/user/parcels/')
+    post_machine_id = post_machine.pk
+    lockers = Locker.objects.filter(post_machine_id=post_machine_id, status=False)  # Only show available lockers
+    if lockers is None or len(lockers) == 0:
+        return redirect(f'/user/parcels/')
+    context = {
+        'lockers': lockers,
+        'parcel_id': parcel.pk,
+        'sender': parcel.sender,
+        'size': parcel.size,
+        'send_date_time': parcel.send_date_time,
+        'recipient': parcel.recipient.username,
+        'post_machine_id': post_machine_id,
+    }
+    return render(request, 'select_locker.html', context)
 
 
 @login_required(login_url='/login/')
-def user_parcel_pick_up(request, parcel_id):
+def user_get_parcel(request, parcel_id):
     user = request.user
     if user.is_superuser:
         parcel = Parcel.objects.get(pk=parcel_id)
@@ -213,13 +232,14 @@ def user_parcel_pick_up(request, parcel_id):
     if parcel is None:
         return HttpResponse(f"Cannot find a parcel {parcel_id} for user {user.username}.", status=404)
     if request.method == "POST":
-        parcel.status = False
+        parcel.status = True  # Delivered
         if parcel.open_date_time is None:
             parcel.open_date_time = timezone.now()
         parcel.save()
         locker = parcel.post_machine_locker
         if locker is None:
             return HttpResponse(f"Linked locker for parcel {parcel_id} not found.", status=400)
+        # make the locker empty
         locker.status = False
         print('new parcel status', parcel.status, 'new locker status', locker.status)
         locker.save()

@@ -16,4 +16,5 @@ class Locker(models.Model):
     status = models.BooleanField(default=False)
 
     def __str__(self):
+        status_str = "Loaded" if self.status else "Empty"
         return f"Locker {self.post_machine.pk}/{self.pk} {self.post_machine.city}"
