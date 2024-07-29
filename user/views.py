@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.utils import timezone
+from django.views import View
 
 from parcel.models import Parcel
 from post_machine.models import PostMachine, Locker
@@ -12,6 +13,26 @@ from user.forms import LoginForm, RegisterForm
 from utils import is_superuser
 
 
+class LoginView(View):
+    def get(self, request):
+        context = {'form': LoginForm()}
+        return render(request, 'login.html', context=context)
+
+    def post(self, request):
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('/user/')
+        form.add_error(None, "Username or password is incorrect")
+        context = {'error': "Username or password is incorrect", 'form': form}
+        return render(request, 'login.html', context)
+
+
+'''
 def login_page(request):
     context = {}
     if request.method == 'POST':
@@ -26,6 +47,7 @@ def login_page(request):
         context = {'error': "Username or password is incorrect"}
     context['form'] = LoginForm()
     return render(request, 'login.html', context=context)
+'''
 
 
 @login_required
@@ -34,6 +56,27 @@ def logout_page(request):
     return redirect('/login/')
 
 
+class RegisterView(View):
+    def get(self, request):
+        context = {'form': RegisterForm()}
+        return render(request, 'register.html', context)
+
+    def post(self, request):
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            email = form.cleaned_data['email']
+            try:
+                user = User.objects.create_user(username, email, password)
+                user.save()
+                return redirect('/login/')
+            except IntegrityError:
+                context = {'error': "Username or password is incorrect"}
+                return render(request, 'register.html', context)
+
+
+'''
 def register_page(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
@@ -52,6 +95,7 @@ def register_page(request):
     else:
         context = {'form': RegisterForm()}
         return render(request, 'register.html', context)
+'''
 
 
 @login_required(login_url='/login/')
