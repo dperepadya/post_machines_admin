@@ -72,8 +72,9 @@ class RegisterView(View):
                 user.save()
                 return redirect('/login/')
             except IntegrityError:
-                context = {'error': "Username or password is incorrect"}
-                return render(request, 'register.html', context)
+                form.add_error('username', 'Username is already taken.')
+        context = {'form': form}
+        return render(request, 'register.html', context)
 
 
 '''
