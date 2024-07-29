@@ -27,7 +27,9 @@ class LoginView(View):
             if user is not None:
                 login(request, user)
                 return redirect('/user/')
-        form.add_error(None, "Username or password is incorrect")
+            form.add_error(None, "Username or password is incorrect")
+        else:
+            form.add_error(None, "There was an error with your submission.")
         context = {'error': "Username or password is incorrect", 'form': form}
         return render(request, 'login.html', context)
 
