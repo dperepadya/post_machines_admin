@@ -3,3 +3,6 @@ docker:
     create docker-compose.yml
     create requirements.txt: pip freeze > requirements.txt
     docker build .
+testing:
+    create fixture file
+        python manage.py dumpdata > data.json

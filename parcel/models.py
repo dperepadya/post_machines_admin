@@ -26,7 +26,7 @@ class Parcel(models.Model):
                 "on the way" if self.post_machine_locker is None else "waiting"
         return f"Parcel {self.pk} {self.sender} - {self.recipient.username} {status_str}"
 
-
+'''
 @receiver(post_save, sender=Parcel)
 def update_status(sender, instance, **kwargs):
     # print(sender, instance, instance.status)
@@ -46,3 +46,4 @@ def update_status(sender, instance, **kwargs):
                 parcel_locker.save()
             print(f"Parcel {instance} is loaded into the Locker {parcel_locker.pk} {instance.status} /"
                   f" {parcel_locker.status}")
+'''

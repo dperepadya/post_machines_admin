@@ -3,7 +3,7 @@ import pdb
 import datetime
 
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
 from post_machine.models import PostMachine, Locker
@@ -21,10 +21,11 @@ def post_machines_list_view(request):
 
 # @user_passes_test(is_superuser, login_url='/login/')
 def post_machine_view(request, post_machine_id):
-    post_machine = PostMachine.objects.get(pk=post_machine_id)
-    if post_machine is None:
-        return HttpResponse(f"Cannot find a post machine with id {post_machine}.")
-    return render(request, 'post_machine.html', {'post_machine': post_machine})
+    try:
+        post_machine = PostMachine.objects.get(pk=post_machine_id)
+        return render(request, 'post_machine.html', {'post_machine': post_machine})
+    except PostMachine.DoesNotExist:
+        return JsonResponse({'error' : f"Cannot find a post machine with id {post_machine_id}"}, status=404)
 
 
 @user_passes_test(is_superuser, login_url='/login/')
