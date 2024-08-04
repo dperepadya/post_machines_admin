@@ -1,0 +1,1102 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-07-22T07:15:10.145Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Parcel object (1)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-07-22T07:21:02.455Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Parcel object (1)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-07-22T07:21:21.086Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Parcel object (1)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-07-22T08:28:25.486Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Parcel 1 John Smith - SarahConnor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-07-22T08:28:29.781Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Parcel 1 John Smith - SarahConnor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-07-22T08:29:51.707Z",
+      "user": 2,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "Locker 1/1 London",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-07-22T08:30:07.412Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Parcel 1 John Smith - SarahConnor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-07-22T08:30:17.997Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Parcel 1 John Smith - SarahConnor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-07-22T08:31:08.191Z",
+      "user": 2,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "Locker 1/1 London",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-07-22T08:31:15.920Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Parcel 1 John Smith - SarahConnor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-07-22T08:31:19.801Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Parcel 1 John Smith - SarahConnor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2024-07-23T08:58:10.963Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "9",
+      "object_repr": "Parcel 9 Anna White - Mustafa Ali",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2024-07-23T08:58:32.607Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Parcel 10 Anna White - Mustafa Ali",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2024-07-23T09:00:18.595Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Parcel 4 Mohhamad Ali - Mustafa Ali",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Post machine recipient\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2024-07-23T09:18:09.165Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Parcel 10 Anna White - Mustafa Ali on the way",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2024-07-24T14:46:18.528Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "12",
+      "object_repr": "Parcel 12 Somebody - Max Fridman on the way",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2024-07-24T14:46:57.022Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "12",
+      "object_repr": "Parcel 12 Somebody - Max Fridman waiting",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Post machine locker\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2024-07-24T14:47:11.663Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "12",
+      "object_repr": "Parcel 12 Somebody - Max Fridman delivered",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2024-07-24T14:53:06.458Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "13",
+      "object_repr": "Parcel 13 Anna White - SarahConnor on the way",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2024-07-24T14:53:28.621Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "13",
+      "object_repr": "Parcel 13 Anna White - SarahConnor waiting",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Post machine locker\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2024-07-24T15:04:23.449Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "13",
+      "object_repr": "Parcel 13 Anna White - SarahConnor delivered",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Open date time\", \"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2024-07-24T15:09:34.034Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Parcel 10 Anna White - Mustafa Ali waiting",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Post machine locker\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2024-07-24T15:10:26.773Z",
+      "user": 2,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Parcel 10 Anna White - Mustafa Ali delivered",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Open date time\", \"Status\"]}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add parcel",
+      "content_type": 7,
+      "codename": "add_parcel"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change parcel",
+      "content_type": 7,
+      "codename": "change_parcel"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete parcel",
+      "content_type": 7,
+      "codename": "delete_parcel"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view parcel",
+      "content_type": 7,
+      "codename": "view_parcel"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add post machine",
+      "content_type": 8,
+      "codename": "add_postmachine"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change post machine",
+      "content_type": 8,
+      "codename": "change_postmachine"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete post machine",
+      "content_type": 8,
+      "codename": "delete_postmachine"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view post machine",
+      "content_type": 8,
+      "codename": "view_postmachine"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add locker",
+      "content_type": 9,
+      "codename": "add_locker"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change locker",
+      "content_type": 9,
+      "codename": "change_locker"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete locker",
+      "content_type": 9,
+      "codename": "delete_locker"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view locker",
+      "content_type": 9,
+      "codename": "view_locker"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$aHopH5Bhlwy3AItwv2g5He$otw4FxQmn+NOVp+DMhFleELY4HsToBcFuWhhSEP4wFw=",
+      "last_login": "2024-07-22T11:39:35.704Z",
+      "is_superuser": false,
+      "username": "SarahConnor",
+      "first_name": "",
+      "last_name": "",
+      "email": "vas.pup@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-16T09:53:18.905Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$h81WZfe0nAya30OSijUx6z$IU4zmy5WiQ4q3kUU5aNyQ3Cc3xsF4JoMrqPjmtmONxc=",
+      "last_login": "2024-07-23T08:14:03.240Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-07-17T12:27:47.189Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$S4Yt4oN8ZJBLk0HVvcQXoP$a8JZYUbOZz2SH5cYrgohn5e4cF4zpEkbJjSIvPBx63A=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "MaxFridman",
+      "first_name": "",
+      "last_name": "",
+      "email": "max@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-18T10:00:03.521Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$wVZlZ3HldI38vRV53yxtsZ$A8k9sQOCLmxy50AFTf8GirMAjeCljb4xBX7N+azXhwM=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "MustafaAli",
+      "first_name": "",
+      "last_name": "",
+      "email": "mustafa@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-18T10:01:12.922Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$xVeOWWocTtdGdU3zktqToW$f+LtyOEU+5Rr+Z0+WmeAXCsYlk80AUs3LSUW+ElYi9s=",
+      "last_login": "2024-07-29T13:30:08.078Z",
+      "is_superuser": false,
+      "username": "JessicaMoon",
+      "first_name": "",
+      "last_name": "",
+      "email": "jes@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-29T13:29:32.598Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "parcel",
+      "model": "parcel"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "post_machine",
+      "model": "postmachine"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "post_machine",
+      "model": "locker"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "3y59k6cdva1x3gd3a1484zu69i2fe7wz",
+    "fields": {
+      "session_data": ".eJxVjMEOwiAQRP-FsyEFSwGP3v0GssuyUjWQlPZk_Hdp0oMe582beYsA25rD1tISZhIXocXplyHEZyp7QQ8o9ypjLesyo9wVebRN3iql1_Vw_w4ytNzXzNbjYGwc2aEH1rqTs4JICckpVqCM19NI1mkPCdCxmYzhRIPpAcXnCwvtOQQ:1sU4QX:_ApzwRO0S5lJu1_AM8MZRcrtXuY7bqbmHRbtbIMxQ08",
+      "expire_date": "2024-07-31T13:10:37.139Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "994l5uf7shlrbv9b4lhts51ilx1enyt8",
+    "fields": {
+      "session_data": ".eJxVjMEOwiAQRP-FsyEFSwGP3v0GssuyUjWQlPZk_Hdp0oMe582beYsA25rD1tISZhIXocXplyHEZyp7QQ8o9ypjLesyo9wVebRN3iql1_Vw_w4ytNzXzNbjYGwc2aEH1rqTs4JICckpVqCM19NI1mkPCdCxmYzhRIPpAcXnCwvtOQQ:1sWAep:cWwCdIxq4TpR2b7XMpxQxmAMjW9B5ekBjGqEDq5rBqw",
+      "expire_date": "2024-08-06T08:14:03.253Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "sxm10aihk4zqp16h7srpmyv1ueutotsj",
+    "fields": {
+      "session_data": ".eJxVjEEOgjAQRe_StWk6nQKDS_eegcx0WkFNSSisjHdXEha6_e-9_zIDb-s4bDUtw6TmbDpz-t2E4yOVHeidy222cS7rMondFXvQaq-zpuflcP8ORq7jt-6JAvWo5FAApOE-dwFczKiQs0-xAXYxePTIRA1Qi-rUAbaCWXw07w_HLjc1:1sYQS0:a2rkyxs5AG2b92y6JRWi84HwBTc2z-LfyrPO4L6rqQ0",
+      "expire_date": "2024-08-12T13:30:08.090Z"
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 1,
+    "fields": {
+      "recipient": 1,
+      "sender": "John Smith",
+      "size": 1,
+      "post_machine_recipient": 1,
+      "post_machine_locker": 1,
+      "send_date_time": "2024-07-19T12:55:00Z",
+      "open_date_time": "2024-07-19T13:19:56Z",
+      "status": true
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 2,
+    "fields": {
+      "recipient": 2,
+      "sender": "Sara White",
+      "size": 1,
+      "post_machine_recipient": 2,
+      "post_machine_locker": 5,
+      "send_date_time": "2024-07-09T12:55:00Z",
+      "open_date_time": null,
+      "status": false
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 3,
+    "fields": {
+      "recipient": 3,
+      "sender": "Joe Black",
+      "size": 2,
+      "post_machine_recipient": 2,
+      "post_machine_locker": 6,
+      "send_date_time": "2024-07-16T12:58:00Z",
+      "open_date_time": null,
+      "status": false
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 4,
+    "fields": {
+      "recipient": 4,
+      "sender": "Mohhamad Ali",
+      "size": 2,
+      "post_machine_recipient": 1,
+      "post_machine_locker": 2,
+      "send_date_time": "2024-07-19T12:59:00Z",
+      "open_date_time": "2024-07-19T13:15:11Z",
+      "status": true
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 5,
+    "fields": {
+      "recipient": 2,
+      "sender": "Dmytro Zhuk",
+      "size": 1,
+      "post_machine_recipient": 1,
+      "post_machine_locker": 3,
+      "send_date_time": "2024-07-18T10:22:00Z",
+      "open_date_time": "2024-07-18T11:57:22.067Z",
+      "status": true
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 7,
+    "fields": {
+      "recipient": 1,
+      "sender": "Dmytro Zhuk",
+      "size": 3,
+      "post_machine_recipient": 1,
+      "post_machine_locker": 2,
+      "send_date_time": "2024-07-19T09:49:00Z",
+      "open_date_time": "2024-07-20T19:29:52.425Z",
+      "status": true
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 8,
+    "fields": {
+      "recipient": 3,
+      "sender": "Dmytro Zhuk",
+      "size": 4,
+      "post_machine_recipient": 2,
+      "post_machine_locker": 7,
+      "send_date_time": "2024-07-19T17:21:00Z",
+      "open_date_time": "2024-07-24T14:29:33.114Z",
+      "status": true
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 9,
+    "fields": {
+      "recipient": 4,
+      "sender": "Anna White",
+      "size": 1,
+      "post_machine_recipient": 1,
+      "post_machine_locker": null,
+      "send_date_time": "2024-07-23T08:16:53Z",
+      "open_date_time": null,
+      "status": false
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 10,
+    "fields": {
+      "recipient": 4,
+      "sender": "Anna White",
+      "size": 1,
+      "post_machine_recipient": 1,
+      "post_machine_locker": 1,
+      "send_date_time": "2024-07-23T08:58:30Z",
+      "open_date_time": "2024-07-24T15:10:22Z",
+      "status": true
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 11,
+    "fields": {
+      "recipient": 3,
+      "sender": "Somebody",
+      "size": 5,
+      "post_machine_recipient": 2,
+      "post_machine_locker": 7,
+      "send_date_time": "2024-07-24T12:58:00Z",
+      "open_date_time": "2024-07-24T14:45:23.350Z",
+      "status": true
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 12,
+    "fields": {
+      "recipient": 3,
+      "sender": "Somebody",
+      "size": 7,
+      "post_machine_recipient": 3,
+      "post_machine_locker": 8,
+      "send_date_time": "2024-07-24T14:46:15Z",
+      "open_date_time": null,
+      "status": false
+    }
+  },
+  {
+    "model": "parcel.parcel",
+    "pk": 13,
+    "fields": {
+      "recipient": 1,
+      "sender": "Anna White",
+      "size": 2,
+      "post_machine_recipient": 1,
+      "post_machine_locker": 1,
+      "send_date_time": "2024-07-24T14:53:05Z",
+      "open_date_time": "2024-07-24T15:04:17Z",
+      "status": true
+    }
+  },
+  {
+    "model": "post_machine.postmachine",
+    "pk": 1,
+    "fields": {
+      "address": "Baker str 15",
+      "city": "London"
+    }
+  },
+  {
+    "model": "post_machine.postmachine",
+    "pk": 2,
+    "fields": {
+      "address": "Blackwood str 16",
+      "city": "Manchester"
+    }
+  },
+  {
+    "model": "post_machine.postmachine",
+    "pk": 3,
+    "fields": {
+      "address": "Whiterose str 21",
+      "city": "Glasgow"
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 1,
+    "fields": {
+      "size": 1,
+      "post_machine": 1,
+      "status": false
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 2,
+    "fields": {
+      "size": 2,
+      "post_machine": 1,
+      "status": false
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 3,
+    "fields": {
+      "size": 2,
+      "post_machine": 1,
+      "status": false
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 4,
+    "fields": {
+      "size": 3,
+      "post_machine": 1,
+      "status": false
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 5,
+    "fields": {
+      "size": 1,
+      "post_machine": 2,
+      "status": true
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 6,
+    "fields": {
+      "size": 2,
+      "post_machine": 2,
+      "status": true
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 7,
+    "fields": {
+      "size": 3,
+      "post_machine": 2,
+      "status": false
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 8,
+    "fields": {
+      "size": 1,
+      "post_machine": 3,
+      "status": true
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 9,
+    "fields": {
+      "size": 2,
+      "post_machine": 3,
+      "status": false
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 10,
+    "fields": {
+      "size": 3,
+      "post_machine": 3,
+      "status": false
+    }
+  },
+  {
+    "model": "post_machine.locker",
+    "pk": 11,
+    "fields": {
+      "size": 3,
+      "post_machine": 3,
+      "status": false
+    }
+  }
+]
