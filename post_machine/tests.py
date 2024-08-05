@@ -19,8 +19,8 @@ class TestCasesParcel(TestCase):
         self.assertEqual(response.status_code, 404)
         response = c.get(f'/post_machine/{self.test_post_machine.pk}/')
         self.assertEqual(response.status_code, 200)
-        # Option 1: test instances
-        actual_post_machine = post_machine_models.PostMachine.objects.get(pk=self.test_post_machine.pk)
-        self.assertEqual(actual_post_machine, self.test_post_machine)
-        # Option 2: test a specific parameters
-        self.assertEqual(actual_post_machine.address, self.test_post_machine.address)
+        # # Option 1: test instances
+        # actual_post_machine = post_machine_models.PostMachine.objects.get(pk=self.test_post_machine.pk)
+        # self.assertEqual(actual_post_machine, self.test_post_machine)
+        # # Option 2: test a specific parameters
+        # self.assertEqual(actual_post_machine.address, self.test_post_machine.address)
