@@ -31,11 +31,6 @@ class TestCasesParcel(TestCase):
         self.assertEqual(response.status_code, 404)
         response = c.get(f'/parcel/{self.test_parcel.pk}/')
         self.assertEqual(response.status_code, 200)
-        # actual_parcel = parcel_models.Parcel.objects.get(pk=self.test_parcel.id)
-        # # Option 1: test instances
-        # self.assertEqual(actual_parcel, self.test_parcel)
-        # # Option 2: test a specific parameter
-        # self.assertEqual(actual_parcel.status, self.test_parcel.status)
         # test unauthenticated request
         c.logout()
         response = c.get(f'/parcel/{self.test_parcel.id}/')
